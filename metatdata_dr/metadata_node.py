@@ -1,4 +1,3 @@
-import zlib
 from typing import Dict, Set
 from .identifiers import AtomicCounter, CompositeID, generate_nid
 
