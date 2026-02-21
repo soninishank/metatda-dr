@@ -5,7 +5,7 @@ run_experiments.py
 Entry point for the Metadata-Driven DR analytical evaluation framework.
 
 Usage:
-    python run_experiments.py \
+    python3 run_experiments.py \
         --data-tb 100 \
         --delta-tb 1 \
         --cores 16 \
@@ -26,8 +26,7 @@ GB = 1024 ** 3        # bytes per GiB
 MB = 1024 ** 2        # bytes per MiB
 
 # Hardware defaults from the paper's reproducibility notes
-HASH_THROUGHPUT_DEFAULT = 500 * MB   # 500 MB/s per core (Intel SHA extensions)
-BLOCK_SIZE_DEFAULT = 100 * 1024      # 100 KB average block size
+BLOCK_SIZE_DEFAULT = 100 * 1024      # 100 KB average block size (used for block count estimation)
 INDEX_ENTRY_SIZE = 64                # bytes per index entry (SHA-256 hex + metadata)
 
 

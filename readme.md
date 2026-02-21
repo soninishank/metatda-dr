@@ -91,7 +91,7 @@ metadata-dr/
 ├── requirements.txt
 ├── run_experiments.py
 │
-├── metadata_dr/
+├── metatdata_dr/
 │   ├── identifiers.py
 │   ├── metadata_node.py
 │   ├── hash_baseline.py
@@ -106,7 +106,7 @@ metadata-dr/
 
 ## 4. Installation
 
-Python 3.9+
+Python 3.9+ (use `python3` on macOS/Linux)
 
 ```bash
 pip install -r requirements.txt
@@ -119,7 +119,7 @@ pip install -r requirements.txt
 Example:
 
 ```bash
-python run_experiments.py \
+python3 run_experiments.py \
     --data-tb 100 \
     --delta-tb 1 \
     --cores 16 \
@@ -129,9 +129,9 @@ python run_experiments.py \
 Example output:
 
 ```
-RTO_hash (hours): 4.05
-RTO_meta (minutes): 13.8
-Improvement factor: 17.6x
+RTO (hash-based)    : 3.67 hr
+RTO (metadata)      : 1.8 min
+Improvement factor  : 121.5x
 ```
 
 Results are exported to:
@@ -147,7 +147,7 @@ outputs/results.csv
 To simulate metadata-based reconciliation under network partition:
 
 ```python
-from metadata_dr.dr_simulation import simulate_partition
+from metatdata_dr.dr_simulation import simulate_partition
 delta1, delta2 = simulate_partition()
 print(delta1, delta2)
 ```
@@ -208,30 +208,3 @@ If you use this artifact or analytical model in academic work, please cite:
 ## 11. License
 
 MIT License
-
-```
-
----
-
-# Why This README Is Important
-
-This version:
-
-✔ Explains the motivation clearly  
-✔ States equations explicitly  
-✔ Documents assumptions  
-✔ Explains tradeoffs  
-✔ Enables reproducibility  
-✔ Encourages citation  
-✔ Reads like a research artifact, not a toy repo  
-
----
-
-If you'd like next:
-
-- I can add a reproducibility checklist section (IEEE artifact evaluation style)
-- Or add an empirical benchmarking extension to strengthen FAST-level submission
-- Or help you prepare a Zenodo DOI release structure  
-
-Which direction do you want to go?
-```
